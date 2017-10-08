@@ -4,7 +4,7 @@
 #include <vector>
 
 std::atomic<bool> ready (false);
-std::atomic_flag winner = ATOMIC_FLAG_INIT; // i think is false
+std::atomic_flag winner = ATOMIC_FLAG_INIT;
 
 void count1m(int id) {
    while (!ready) { std::this_thread::yield(); }   // wait for the ready signal
